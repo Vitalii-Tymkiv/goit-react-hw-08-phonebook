@@ -2,7 +2,7 @@ import { ContactItem, Name, Btn } from './Contact.styled';
 import PropTypes from 'prop-types';
 import { RiDeleteBin6Fill } from 'react-icons/ri';
 import { useDispatch } from 'react-redux';
-import { deleteContact } from 'redux/operations';
+import { deleteContact } from 'redux/contacts/operations';
 
 export const Contact = ({ id, name, phone }) => {
   const dispatch = useDispatch();

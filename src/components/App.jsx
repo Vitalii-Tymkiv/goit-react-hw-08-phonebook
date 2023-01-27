@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { selectContacts } from '../redux/selectors';
+import { selectContacts } from '../redux/contacts/selectors';
 import { useEffect } from 'react';
 import { Container } from '../UI/Container';
 import { SectionWrapper } from '../UI/SectionWrapper';
@@ -7,9 +7,9 @@ import { ContactForm } from '../components/ContactForm';
 import { Filter } from '../components/Filter';
 import { ContactList } from '../components/ContactList';
 import { InfoMessage } from './InfoMessage/InfoMessage';
-import { selectIsLoading, selectError } from '../redux/selectors';
+import { selectIsLoading, selectError } from '../redux/contacts/selectors';
 import { Spinner } from '../UI/Spinner/Spinner';
-import { fetchContacts } from 'redux/operations';
+import { fetchContacts } from 'redux/contacts/operations';
 
 export const App = () => {
   const dispatch = useDispatch();

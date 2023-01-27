@@ -1,7 +1,7 @@
 import { nanoid } from '@reduxjs/toolkit';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectFilter } from 'redux/selectors';
-import { filterContacts } from 'redux/filterSlice';
+import { selectFilter } from 'redux/contacts/selectors';
+import { filterContacts } from 'redux/contacts/filterSlice';
 import { Label, LabelName, Input } from './Filter.styled';
 import { GoSearch } from 'react-icons/go';
 
