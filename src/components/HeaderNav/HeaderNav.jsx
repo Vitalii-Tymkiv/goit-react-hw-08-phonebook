@@ -1,4 +1,4 @@
-import { useAuth } from 'hooks';
+import { useAuth } from '../hooks';
 import { Wrapper, StyledLink } from './HeaderNav.styled';
 
 export const HeaderNav = () => {
