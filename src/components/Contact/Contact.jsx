@@ -4,13 +4,13 @@ import { RiDeleteBin6Fill } from 'react-icons/ri';
 import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/contacts/operations';
 
-export const Contact = ({ id, name, phone }) => {
+export const Contact = ({ id, name, number }) => {
   const dispatch = useDispatch();
 
   return (
     <ContactItem>
       <Name>
-        {name}: {phone}
+        {name}: {number}
       </Name>
       <Btn
         type="button"

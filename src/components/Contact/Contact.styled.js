@@ -8,6 +8,7 @@ export const ContactItem = styled.li`
 export const Name = styled.span`
   display: inline-block;
   width: 250px;
+  color: #728697;
 `;
 
 export const Btn = styled.button`
@@ -18,12 +19,12 @@ export const Btn = styled.button`
   font-weight: 500;
   padding: 10px 15px;
   border-radius: 5px;
-  background-color: #e17c63;
+  background-color: #728697;
   border: none;
   transition: all 0.3s ease;
 
   &:hover {
     color: #fff;
-    background-color: #f51e10;
+    background-color: #cfa78b;
   }
 `;

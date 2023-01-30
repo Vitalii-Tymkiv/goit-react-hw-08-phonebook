@@ -12,7 +12,7 @@ export const Spinner = () => {
         wrapperStyle={{}}
         wrapperClass="MagnifyingGlass-wrapper"
         glassColor="#c0efff"
-        color="#b7d0da"
+        color="#728697"
       />
     </SpinnerWrapper>
   );
