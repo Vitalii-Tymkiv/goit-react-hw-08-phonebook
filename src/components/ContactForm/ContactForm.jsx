@@ -1,17 +1,16 @@
 import { useState } from 'react';
 import { Input, Btn } from './ContactForm.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import Notiflix from 'notiflix';
 import { addContact } from 'redux/contacts/operations';
 import { selectContacts } from 'redux/contacts/selectors';
-
+import { showAlertMessage } from 'UI/AlertMessage/AlertMessage';
 export const ContactForm = () => {
   const [name, setName] = useState('');
   const [number, setPhone] = useState('');
   const contacts = useSelector(selectContacts);
   const dispatch = useDispatch();
 
-  const handleChange = e => {
+  const handleChangeForm = e => {
     const type = e.target.name;
     switch (type) {
       case 'name':
@@ -38,7 +37,7 @@ export const ContactForm = () => {
     ) {
       reset();
 
-      return Notiflix.Notify.info(`${name} is already in contacts`);
+      return showAlertMessage(name);
     }
     dispatch(addContact({ name, number }));
     reset();
@@ -53,7 +52,7 @@ export const ContactForm = () => {
     <form onSubmit={handleSubmit}>
       <Input
         value={name}
-        onChange={handleChange}
+        onChange={handleChangeForm}
         type="text"
         name="name"
         placeholder="Enter Name"
@@ -64,7 +63,7 @@ export const ContactForm = () => {
 
       <Input
         value={number}
-        onChange={handleChange}
+        onChange={handleChangeForm}
         type="tel"
         name="number"
         placeholder="Enter Phone Number"
@@ -73,7 +72,7 @@ export const ContactForm = () => {
         required
       />
 
-      <Btn type="submit">Add contacts</Btn>
+      <Btn type="submit">Add contact</Btn>
     </form>
   );
 };
