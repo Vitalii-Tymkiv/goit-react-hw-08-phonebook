@@ -1,30 +1,26 @@
 import styled from 'styled-components';
 
-export const Input = styled.input`
-  height: 40px;
-  margin-left: 10px;
-  padding: 8px;
-  font-size: 18px;
-  color: #728697;
-  border-radius: 4px;
-  border: 1px solid rgba(33, 33, 33, 0.2);
+export const Button = styled.button`
+  align-items: center;
+  margin-left: 16px;
+  margin-top: 9px;
   cursor: pointer;
-`;
-
-export const Btn = styled.button`
-  margin-left: 10px;
-  cursor: pointer;
-  color: #7366ff;
+  color: #b1c8dd;
   font-weight: 500;
   padding: 10px 15px;
   border-radius: 5px;
-  background-color: rgba(115, 102, 255, 0.15);
+  background-color: #728697;
+  border: transparent;
   transition: all 0.3s ease;
-  border: none;
-  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px,
+    rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px,
+    rgba(0, 0, 0, 0.07) 0px 16px 16px;
 
-  &:hover {
+  cursor: pointer;
+  transition: all 250ms ease-out;
+
+  :hover {
     color: #fff;
-    background-color: #7366ff;
+    background-color: #515e69;
   }
 `;

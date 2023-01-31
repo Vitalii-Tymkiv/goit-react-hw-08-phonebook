@@ -1,6 +1,6 @@
-import { Title } from '../Title/Title';
-import { TitlePicture } from '../TitlePicture/TitlePicture';
-import phonebook from '../../pictures/phonebook.jpg';
+import { Title } from '../components/Title/Title';
+import { TitlePicture } from '../components/TitlePicture/TitlePicture';
+import phonebook from '../pictures/phonebook.jpg';
 
 const Home = () => {
   return (

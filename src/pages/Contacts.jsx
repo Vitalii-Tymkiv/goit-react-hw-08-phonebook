@@ -4,14 +4,14 @@ import {
   selectContacts,
   selectIsLoading,
   selectError,
-} from '../../redux/contacts/selectors';
+} from '../redux/contacts/selectors';
 
-import { SectionWrapper } from '../../UI/SectionWrapper/SectionWrapper';
-import { ContactForm } from '../ContactForm/ContactForm';
-import { Filter } from '../Filter/Filter';
-import { ContactList } from '../ContactList/ContactList';
-import { InfoMessage } from '../InfoMessage/InfoMessage';
-import { Spinner } from '../../UI/Spinner/Spinner';
+import { SectionWrapper } from '../UI/SectionWrapper/SectionWrapper';
+import { ContactForm } from '../components/ContactForm';
+import { Filter } from '../components/Filter';
+import { ContactList } from '../components/ContactList';
+import { InfoMessage } from '../components/InfoMessage';
+import { Spinner } from '../UI/Spinner/Spinner';
 import { fetchContacts } from 'redux/contacts/operations';
 
 export const Contacts = () => {
@@ -26,7 +26,7 @@ export const Contacts = () => {
 
   return (
     <>
-      <SectionWrapper title="Phonebook">
+      <SectionWrapper title="Add new contact">
         <ContactForm />
       </SectionWrapper>
 

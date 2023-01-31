@@ -8,6 +8,7 @@ export const Wrapper = styled.div`
 export const ImageThumb = styled.div`
   margin-bottom: 16px;
   width: 100%;
+  height: 700px;
   flex-grow: 1;
   border-radius: 10px;
   overflow: hidden;

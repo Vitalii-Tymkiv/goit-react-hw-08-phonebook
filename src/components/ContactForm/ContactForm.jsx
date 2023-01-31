@@ -1,9 +1,23 @@
 import { useState } from 'react';
-import { Input, Btn } from './ContactForm.styled';
+import TextField from '@mui/material/TextField';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/contacts/operations';
 import { selectContacts } from 'redux/contacts/selectors';
+import { Button } from './ContactForm.styled';
 import { showAlertMessage } from 'UI/AlertMessage/AlertMessage';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { indigo } from '@mui/material/colors';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: indigo[500],
+    },
+    secondary: {
+      main: '#728697',
+    },
+  },
+});
 export const ContactForm = () => {
   const [name, setName] = useState('');
   const [number, setPhone] = useState('');
@@ -50,106 +64,38 @@ export const ContactForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <Input
-        value={name}
-        onChange={handleChangeForm}
-        type="text"
-        name="name"
-        placeholder="Enter Name"
-        pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-        title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-        required
-      />
-
-      <Input
-        value={number}
-        onChange={handleChangeForm}
-        type="tel"
-        name="number"
-        placeholder="Enter Phone Number"
-        pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-        title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-        required
-      />
-
-      <Btn type="submit">Add contact</Btn>
+      <ThemeProvider theme={theme}>
+        <TextField
+          value={name}
+          onChange={handleChangeForm}
+          type="text"
+          name="name"
+          label="Enter Name"
+          pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+          title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+          required={true}
+          variant="outlined"
+          color="secondary"
+        />
+      </ThemeProvider>
+      <ThemeProvider theme={theme}>
+        <TextField
+          value={number}
+          onChange={handleChangeForm}
+          type="tel"
+          name="number"
+          label="Enter Phone Number"
+          pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+          title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+          required={true}
+          variant="outlined"
+          sx={{ ml: 2 }}
+          color="secondary"
+        />
+      </ThemeProvider>
+      <Button type="submit" variant="contained" sx={{ ml: 2, mt: 1.2 }}>
+        Add contact
+      </Button>
     </form>
   );
 };
-
-// import { Input, Btn } from './ContactForm.styled';
-
-// import { selectContacts } from 'redux/contacts/selectors';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { useState } from 'react';
-// import { addContact } from 'redux/contacts/operations';
-// import { showAlertMessage } from 'UI/AlertMessage/AlertMessage';
-
-// export const ContactForm = () => {
-//   const [name, setName] = useState('');
-//   const [number, setNumber] = useState('');
-//   const contacts = useSelector(selectContacts);
-//   const dispatch = useDispatch();
-
-//   const handleChangeForm = ({ target }) => {
-//     const { name, value } = target;
-
-//     switch (name) {
-//       case 'name':
-//         setName(value);
-//         break;
-//       case 'number':
-//         setNumber(value);
-//         break;
-//       default:
-//         return;
-//     }
-//   };
-
-//   const handleSubmit = event => {
-//     event.preventDefault();
-
-//     const handleCheckContact = name => {
-//       const isExistContact = contacts.find(contact => contact.name === name);
-//       isExistContact && showAlertMessage(name);
-//       return isExistContact;
-//     };
-//     const normName = name.trim();
-//     if (handleCheckContact(name)) return;
-//     dispatch(addContact({ name: normName, number }));
-//     resetForm();
-//   };
-
-//   const resetForm = () => {
-//     setName('');
-//     setNumber('');
-//   };
-
-//   return (
-//     <form onSubmit={handleSubmit}>
-//       <Input
-//         type="text"
-//         name="name"
-//         value={name}
-//         placeholder="Enter Name"
-//         pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-//         title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-//         required
-//         onChange={handleChangeForm}
-//       ></Input>
-
-//       <Input
-//         type="text"
-//         name="number"
-//         value={number}
-//         placeholder="Enter Phone Number"
-//         pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-//         title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
-//         required
-//         onChange={handleChangeForm}
-//       ></Input>
-
-//       <Btn type="submit">Add Contact</Btn>
-//     </form>
-//   );
-// };

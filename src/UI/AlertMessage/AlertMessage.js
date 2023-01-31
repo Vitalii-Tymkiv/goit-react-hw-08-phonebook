@@ -5,7 +5,12 @@ const notifyOptions = {
   fontSize: '16px',
   clickToClose: true,
   width: '450px',
-  timeout: 4000,
+  timeout: 2000,
+  backOverlay: true,
+  warning: {
+    background: '#728697',
+    notiflixIconColor: '#fff',
+  },
 };
 
 export function showAlertMessage(value) {

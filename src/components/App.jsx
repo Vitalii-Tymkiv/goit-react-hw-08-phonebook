@@ -7,10 +7,10 @@ import { PrivateRoute } from './PrivateRoute';
 import { refreshUser } from 'redux/auth/operations';
 import { useAuth } from './hooks';
 
-const HomePage = lazy(() => import('../components/pages/Home'));
-const RegisterPage = lazy(() => import('../components/pages/Register'));
-const LoginPage = lazy(() => import('../components/pages/Login'));
-const ContactsPage = lazy(() => import('../components/pages/Contacts'));
+const HomePage = lazy(() => import('../pages/Home'));
+const RegisterPage = lazy(() => import('../pages/Register'));
+const LoginPage = lazy(() => import('../pages/Login'));
+const ContactsPage = lazy(() => import('../pages/Contacts'));
 
 export const App = () => {
   const dispatch = useDispatch();
@@ -59,24 +59,4 @@ export const App = () => {
       )}
     </>
   );
-
-  // return (
-  //   <Container>
-  //     <SectionWrapper title="Phonebook">
-  //       <ContactForm />
-  //     </SectionWrapper>
-
-  //     <SectionWrapper title="Contact List">
-  //       {isLoading && !error && <Spinner />}
-  //       {contacts.length > 0 ? (
-  //         <>
-  //           <Filter />
-  //           <ContactList />
-  //         </>
-  //       ) : (
-  //         <InfoMessage message={'Contact List is empty'} />
-  //       )}
-  //     </SectionWrapper>
-  //   </Container>
-  // );
 };

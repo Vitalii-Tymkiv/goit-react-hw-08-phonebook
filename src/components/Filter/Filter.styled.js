@@ -1,17 +1,18 @@
 import styled from 'styled-components';
 
-export const Label = styled.label`
+export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  width: 290px;
+  width: 600px;
   margin-bottom: 20px;
 `;
 
 export const LabelName = styled.span`
   padding-bottom: 4px;
   font-size: 16px;
-  font-weight: 500;
+  /* font-weight: 500; */
+  color: #728697;
 `;
 
 export const Input = styled.input`

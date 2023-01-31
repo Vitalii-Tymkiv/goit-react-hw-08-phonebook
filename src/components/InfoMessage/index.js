@@ -1,1 +1,1 @@
-export { Message } from './infoMessage.styled';
+export { InfoMessage } from './InfoMessage';
