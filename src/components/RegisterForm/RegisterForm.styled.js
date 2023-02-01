@@ -8,10 +8,23 @@ export const Form = styled.form`
   justify-content: center;
   align-items: center;
   background: #cfa78b;
-  width: 500px;
+  width: 270px;
   margin-left: auto;
   margin-right: auto;
   padding: 15px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   border-radius: 10px;
+  @media screen and (min-width: 768px) {
+    width: 500px;
+  }
+`;
+
+export const InputWrapper = styled.div`
+  display: flex;
+  width: 200px;
+  justify-content: center;
+
+  @media screen and (min-width: 768px) {
+    width: 300px;
+  }
 `;

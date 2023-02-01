@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Button = styled.button`
   align-items: center;
   margin-left: 16px;
-  margin-top: 9px;
+  height: 60%;
   cursor: pointer;
   color: #b1c8dd;
   font-weight: 500;
@@ -18,9 +18,41 @@ export const Button = styled.button`
 
   cursor: pointer;
   transition: all 250ms ease-out;
+  @media screen and (max-width: 768px) {
+    margin-left: 0;
+    margin-top: 8px;
+
+    align-self: center;
+  }
+  @media screen and (min-width: 768px) {
+    margin-top: 9px;
+  }
 
   :hover {
     color: #fff;
     background-color: #515e69;
+  }
+`;
+
+export const Form = styled.form`
+  @media screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+  }
+  @media screen and (min-width: 768px) {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    ailgn-items: baseline;
+  }
+`;
+
+export const InputWrapper = styled.div`
+  @media screen and (max-width: 768px) {
+    margin-left: 0;
+    margin-top: 9px;
+  }
+  @media screen and (min-width: 768px) {
+    margin-left: 8px;
   }
 `;

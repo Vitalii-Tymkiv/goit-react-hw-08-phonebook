@@ -4,8 +4,11 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  width: 600px;
+  width: 100%;
   margin-bottom: 20px;
+  @media screen and (min-width: 768px) {
+    width: 600px;
+  }
 `;
 
 export const LabelName = styled.span`

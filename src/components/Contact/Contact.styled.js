@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 
 export const ContactItem = styled.li`
-  width: 390px;
+  display: flex;
+  width: 100%;
   margin: 10px auto;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const Name = styled.span`
-  display: inline-block;
   width: 250px;
   color: #728697;
 `;

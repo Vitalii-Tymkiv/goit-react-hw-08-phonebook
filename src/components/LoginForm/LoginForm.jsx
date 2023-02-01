@@ -4,7 +4,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { grey } from '@mui/material/colors';
-import { Form } from './LoginForm.styled';
+import { Form, InputWrapper } from './LoginForm.styled';
 import { Notify } from 'notiflix';
 
 const theme = createTheme({
@@ -51,30 +51,34 @@ export const LoginForm = () => {
   return (
     <Form onSubmit={handleSubmit} autoComplete="on">
       <ThemeProvider theme={theme}>
-        <TextField
-          sx={{ width: 300 }}
-          name="email"
-          type="email"
-          required={true}
-          label="Email"
-          variant="outlined"
-          margin="normal"
-          color="secondary"
-          size="small"
-        />
+        <InputWrapper>
+          <TextField
+            fullWidth
+            name="email"
+            type="email"
+            required={true}
+            label="Email"
+            variant="outlined"
+            margin="normal"
+            color="secondary"
+            size="small"
+          />
+        </InputWrapper>
       </ThemeProvider>
       <ThemeProvider theme={theme}>
-        <TextField
-          sx={{ width: 300 }}
-          name="password"
-          type="password"
-          required={true}
-          label="Password"
-          variant="outlined"
-          margin="normal"
-          color="secondary"
-          size="small"
-        />
+        <InputWrapper>
+          <TextField
+            sx={{ width: 300 }}
+            name="password"
+            type="password"
+            required={true}
+            label="Password"
+            variant="outlined"
+            margin="normal"
+            color="secondary"
+            size="small"
+          />
+        </InputWrapper>
       </ThemeProvider>
       <ThemeProvider theme={theme}>
         <Button type="submit" variant="outlined" sx={{ mt: 2 }}>

@@ -4,20 +4,33 @@ export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: row;
-  gap: 16px;
+  flex-direction: column;
+  gap: 4px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    gap: 16px;
+  }
 `;
 
 export const Text = styled.p`
   font-weight: 700;
-  font-size: 16px;
+  font-size: 14px;
   color: #728697;
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+    margin-left: auto;
+  }
 `;
 
 export const Name = styled.span`
   font-weight: 700;
   font-size: 18px;
   color: #fff;
+  @media (min-width: 768px) {
+    font-size: 18px;
+  }
 `;
 
 export const Button = styled.button`

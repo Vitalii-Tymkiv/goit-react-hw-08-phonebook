@@ -4,7 +4,7 @@ import { Notify } from 'notiflix';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { Form } from './RegisterForm.styled';
+import { Form, InputWrapper } from './RegisterForm.styled';
 import { grey } from '@mui/material/colors';
 
 const theme = createTheme({
@@ -55,43 +55,49 @@ export const RegisterForm = () => {
   return (
     <Form onSubmit={handleSubmit} autoComplete="on">
       <ThemeProvider theme={theme}>
-        <TextField
-          sx={{ width: 300 }}
-          name="name"
-          type="text"
-          required={true}
-          label="Username"
-          variant="outlined"
-          margin="normal"
-          color="secondary"
-          size="small"
-        />
+        <InputWrapper>
+          <TextField
+            sx={{ width: 300 }}
+            name="name"
+            type="text"
+            required={true}
+            label="Username"
+            variant="outlined"
+            margin="normal"
+            color="secondary"
+            size="small"
+          />
+        </InputWrapper>
       </ThemeProvider>
       <ThemeProvider theme={theme}>
-        <TextField
-          sx={{ width: 300 }}
-          name="email"
-          type="email"
-          required={true}
-          label="Email"
-          variant="outlined"
-          margin="normal"
-          color="secondary"
-          size="small"
-        />
+        <InputWrapper>
+          <TextField
+            sx={{ width: 300 }}
+            name="email"
+            type="email"
+            required={true}
+            label="Email"
+            variant="outlined"
+            margin="normal"
+            color="secondary"
+            size="small"
+          />
+        </InputWrapper>
       </ThemeProvider>
       <ThemeProvider theme={theme}>
-        <TextField
-          sx={{ width: 300 }}
-          name="password"
-          required={true}
-          type="password"
-          label="Password"
-          variant="outlined"
-          margin="normal"
-          color="secondary"
-          size="small"
-        />
+        <InputWrapper>
+          <TextField
+            sx={{ width: 300 }}
+            name="password"
+            required={true}
+            type="password"
+            label="Password"
+            variant="outlined"
+            margin="normal"
+            color="secondary"
+            size="small"
+          />
+        </InputWrapper>
       </ThemeProvider>
       <ThemeProvider theme={theme}>
         <Button type="submit" variant="outlined" color="primary" sx={{ mt: 2 }}>

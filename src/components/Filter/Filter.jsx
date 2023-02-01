@@ -28,10 +28,6 @@ export const Filter = () => {
 
   return (
     <Wrapper>
-      {/* <LabelName>
-        <GoSearch style={{ verticalAlign: 'middle', marginRight: '5px' }} />
-        Find contacts by name
-      </LabelName> */}
       <ThemeProvider theme={theme}>
         <TextField
           fullWidth
